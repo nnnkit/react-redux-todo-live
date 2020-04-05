@@ -4,6 +4,9 @@ import App from "./App";
 import { store } from "./store";
 import { Provider } from "react-redux";
 import "./style.css";
+store.subscribe(() => {
+  localStorage.setItem("myTodos", JSON.stringify(store.getState()));
+});
 
 render(
   <Provider store={store}>

@@ -16,3 +16,6 @@ li {
   justify-content: space-around;
   align-items: center;
 }
+.active {
+  background: tomato;
+}

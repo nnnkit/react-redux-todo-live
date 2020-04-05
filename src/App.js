@@ -1,6 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import Todos from "./Todos";
+import Footer from "./Footer";
+import { addTodoAction } from "./store/action";
 
 class App extends React.Component {
   constructor(props) {
@@ -14,7 +16,7 @@ class App extends React.Component {
   };
   addTodo = () => {
     // using dispatch
-    this.props.dispatch({ type: "ADD_TODO", todoText: this.state.todoInput });
+    this.props.dispatch(addTodoAction(this.state.todoInput));
     // add out todo to redux store
     this.setState({ todoInput: "" });
   };
@@ -31,6 +33,7 @@ class App extends React.Component {
         />
         <button onClick={this.addTodo}>Add Todo</button>
         <Todos />
+        <Footer />
       </div>
     );
   }
